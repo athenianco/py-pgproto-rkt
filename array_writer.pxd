@@ -43,7 +43,7 @@ cdef extern from "numpy/arrayobject.h":
 ctypedef dtype np_dtype
 
 
-cdef extern from "numpy/libdivide/libdivide.h":
+cdef extern from "libdivide.h":
     struct libdivide_s64_t:
         int64_t magic
         uint8_t more
