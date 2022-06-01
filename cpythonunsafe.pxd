@@ -8,6 +8,7 @@ cdef extern from "Python.h":
     PyObject *PyList_GET_ITEM(PyObject *, Py_ssize_t) nogil
     void *PyLong_AsVoidPtr(PyObject *pylong)
     PyObject *PyLong_FromLong(long v)
+    PyObject *PyLong_FromLongLong(long long v)
     PyObject *Py_None
     PyObject *Py_True
     PyObject *Py_False

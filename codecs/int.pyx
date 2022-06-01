@@ -150,7 +150,7 @@ cdef int8_decode(CodecContext settings, FRBuffer *buf):
 cdef int int8_decode_numpy(CodecContext settings, FRBuffer *buf, ArrayWriter output) except -1:
     cdef int64_t value = hton.unpack_int64(frb_read(buf, 8))
     if output.current_field_is_object():
-        return output.write_object_unsafe(cpythonunsafe.PyLong_FromLong(value))
+        return output.write_object_unsafe(cpythonunsafe.PyLong_FromLongLong(value))
     return output.write_int64(value)
 
 
