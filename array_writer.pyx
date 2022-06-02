@@ -200,7 +200,9 @@ cdef class ArrayWriter:
             char dtype
             int size
 
-        self.null_indexes.append(self._item * self._dtype_length + self._field)
+        self.null_indexes.append(
+            (_ARRAY_CHUNK_SIZE * (len(self._chunks) - 1) + self._item) * self._dtype_length
+            + self._field)
         dtype = self._dtype_kind[self._field]
         size = self._dtype_size[self._field]
         if dtype == b"O":
